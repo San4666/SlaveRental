@@ -23,7 +23,7 @@ class SlaveCategoryCreator
     {
         if (!$this->repository->exist($slave, $category)) {
             if ($category->getParent() != null) {
-                $this->create($slave, $category);
+                $this->create($slave, $category->getParent());
             }
             $this->repository->create($slave, $category);
         }
